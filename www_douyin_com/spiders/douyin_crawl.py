@@ -118,7 +118,7 @@ class DouyinCrawl(object):
 
     def grab_user_media(self, user_id, action, content=None):
 
-        if not re.findall('^\d{11}$', user_id) or not re.findall('^\d{12}$', user_id):
+        if  re.findall('^\d{11}$', user_id) ==[] and re.findall('^\d{12}$', user_id) ==[]:
             self.logger.info("请输入正确的用户id， 用户id为11或12位纯数字...")
             return
 
@@ -294,7 +294,7 @@ class DouyinCrawl(object):
         return content
 
     def download_one_video(self, aweme_id):
-        if not re.findall('^\d{19}$', aweme_id):
+        if  re.findall('^\d{19}$', aweme_id) == []:
             self.logger.error("download_one_video 收到错误的视频id，校验后再尝试")
             self.logger.error("正确的视频id是19位纯数字")
             return
