@@ -236,7 +236,7 @@ class DouyinCrawl(object):
         author_nick_name = video_infos.get("author_nick_name")
         author_uid = video_infos.get("author_uid")
         video_desc = video_infos.get("video_desc")
-        video_name = "_".join([author_nick_name, author_uid, video_desc])
+        video_name = "_".join([author_nick_name, author_uid,aweme_id ,video_desc])
 
         music_log_info = "和音频" if music_content else ""
         self.logger.info("download_favorite_video 正在下载视频{} {} ".format(music_log_info, video_name))
